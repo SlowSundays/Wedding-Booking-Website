@@ -1,0 +1,157 @@
+<!-- Wedding Event Hall Website with a Wedding Theme -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Bliss Event Hall</title>
+    <!-- Link to Bootstrap CSS and custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-image: url('wedding-theme.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+        }
+        .btn-primary {
+            background-color: #d4a373;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c38e60;
+        }
+        footer {
+            background-color: #d4a373;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="text-center py-5">
+        <h1>Welcome to Wedding Bliss Event Hall</h1>
+        <p class="lead">Your happily-ever-after starts here</p>
+        <nav class="mt-3">
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a href="#about" class="nav-link text-white">About Us</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link text-white">Services</a></li>
+                <li class="nav-item"><a href="#booking" class="nav-link text-white">Book Now</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+                <li class="nav-item"><a href="register.html" class="nav-link text-white">Register</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link text-white">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center">Wedding Bliss Event Hall offers luxurious venues and exclusive wedding packages designed to make your special day unforgettable.</p>
+            <div class="text-center">
+                <img src="ImageAsset/weddinghall.jpg" alt="Wedding Hall" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Venue Decor</h5>
+                            <p class="card-text">Elegant and customizable wedding themes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Catering</h5>
+                            <p class="card-text">Exquisite cuisines tailored to your taste.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Photography</h5>
+                            <p class="card-text">Capture every precious moment beautifully.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Event Coordination</h5>
+                            <p class="card-text">Ensuring a seamless and stress-free wedding day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Book Your Dream Wedding</h2>
+            <form id="bookingForm" action="register.php" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Wedding Date:</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="package" class="form-label">Choose a Package:</label>
+                    <select id="package" name="package" class="form-select" required>
+                        <option value="silver">Silver Package</option>
+                        <option value="gold">Gold Package</option>
+                        <option value="platinum">Platinum Package</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p>Email: info@weddingbliss.com</p>
+            <p>Phone: +123-456-7890</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Wedding Bliss Event Hall. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

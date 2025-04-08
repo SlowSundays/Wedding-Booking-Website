@@ -1,0 +1,207 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-image: url('iamge/images.jpeg');
+            background-size: cover;
+            background-color: #5a8dee; /* Light blue color */
+            color: white;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        header p.lead {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        header nav ul li {
+            display: inline-block;
+        }
+        header nav ul li a {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #d4a373;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c38e60;
+        }
+        footer {
+            background-color: #d4a373;
+            color: white;
+        }
+        .package-details {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .package-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .package-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .package-details ul li {
+            margin-bottom: 10px;
+        }
+        .package-details h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="booking" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Book Your Dream Wedding</h2>
+            <form id="bookingForm" action="registerHall.php" method="POST" onsubmit="return validateForm()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Registered Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Wedding Date:</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="package" class="form-label">Choose a Package:</label>
+                    <select id="package" name="package" class="form-select" onchange="displayPackageDetails()" required>
+                        <option value="silver">Silver Package</option>
+                        <option value="gold">Gold Package</option>
+                        <option value="platinum">Platinum Package</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary w-45" onclick="location.href='WeddingHall.php'">Back to main page</button>
+                    <button type="submit" class="btn btn-primary w-45">Submit</button>
+                </div>
+            </form>
+
+            <!-- Section to display package details -->
+            <div id="packageDetails" class="package-details d-none">
+                <h3 id="packageTitle" class="text-center"></h3>
+                <img id="packageImage" src="" alt="Package Image">
+                <ul id="packageFeatures"></ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const package = document.getElementById('package').value;
+
+            if (name === "" || email === "" || date === "" || package === "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+            return true;
+        }
+
+        function displayPackageDetails() {
+            const packageDetails = {
+                silver: {
+                    title: "Silver Package",
+                    image: "iamge/hall1.jpg",
+                    features: [
+                        "50 Tables",
+                        "500 Pax",
+                        "Free Food",
+                        "Soft Drinks",
+                        "Background Music"
+                    ]
+                },
+                gold: {
+                    title: "Gold Package",
+                    image: "iamge/hall2.jpg",
+                    features: [
+                        "100 Tables",
+                        "1000 Pax",
+                        "Free Food",
+                        "Unlimited Drinks",
+                        "DJ Services"
+                    ]
+                },
+                platinum: {
+                    title: "Platinum Package",
+                    image: "iamge/hall3.jpg",
+                    features: [
+                        "150 Tables",
+                        "1500 Pax",
+                        "Gourmet Food",
+                        "Unlimited Drinks",
+                        "Live Band"
+                    ]
+                }
+            };
+
+            const selectedPackage = document.getElementById('package').value;
+            const details = packageDetails[selectedPackage];
+
+            if (details) {
+                document.getElementById('packageTitle').textContent = details.title;
+                document.getElementById('packageImage').src = details.image;
+                const featuresList = document.getElementById('packageFeatures');
+                featuresList.innerHTML = details.features.map(feature => `<li>${feature}</li>`).join('');
+
+                document.getElementById('packageDetails').classList.remove('d-none');
+            }
+        }
+    </script>
+</body>
+</html>

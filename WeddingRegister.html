@@ -1,0 +1,106 @@
+<!-- Wedding Event Hall Website with a Wedding Theme -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Bliss Event Hall</title>
+    <!-- Link to Bootstrap CSS and custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-image: url('wedding-theme.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+        }
+        .btn-primary {
+            background-color: #d4a373;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c38e60;
+        }
+        footer {
+            background-color: #d4a373;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Register Page -->
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Register for Wedding Bliss Event Hall</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form id="registerForm" action="register.php" method="POST">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username:</label>
+                                <input type="text" id="username" name="username" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" id="password" name="password" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password:</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                            </div>
+                            <button type="submit"6 class="btn btn-primary w-100">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Login to Wedding Bliss Event Hall</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form id="loginForm" action="login.php" method="POST">
+                            <div class="mb-3">
+                                <label for="usernameLogin" class="form-label">Username:</label>
+                                <input type="text" id="usernameLogin" name="username" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordLogin" class="form-label">Password:</label>
+                                <input type="password" id="passwordLogin" name="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Wedding Bliss Event Hall. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
